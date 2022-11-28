@@ -1,21 +1,21 @@
-@page "/products_old"
+@page "/products_new"
 @inject InventoryApp.InventoryAppService inventoryAppService
 
-<div class="column-layout products_old-container">
+<div class="column-layout products_new-container">
     <div class="column-layout group">
         <div class="row-layout group_1">
             <h6 class="h6">
                 Products
             </h6>
             <div class="row-layout group_2">
-                <IgbButton class="button" products_old-scope>
+                <IgbButton class="button" products_new-scope>
                     <span class="material-icons">
                         add
                     </span>
                     <span>Add new product</span>
                     <IgbRipple></IgbRipple>
                 </IgbButton>
-                <IgbButton Variant="ButtonVariant.Outlined" class="button" products_old-scope>
+                <IgbButton Variant="ButtonVariant.Outlined" class="button" products_new-scope>
                     <span class="material-icons">
                         import_export
                     </span>
@@ -28,7 +28,7 @@
             <div class="row-layout group_3">
                 <span class="select">Select not yet available in Blazor</span>
                 <span class="user-input">Combo not yet available in Blazor</span>
-                <IgbInput Label="Search" Outlined="false" class="user-input" products_old-scope>
+                <IgbInput Label="Search" Outlined="false" class="user-input" products_new-scope>
                     <span slot="prefix">
                         <span class="material-icons icon">
                             search
@@ -37,14 +37,14 @@
                 </IgbInput>
             </div>
             <div class="row-layout group_4">
-                <IgbButton Variant="ButtonVariant.Flat" @onclick="@(e => Dropdown?.Toggle(Button))" @ref="Button" class="button" products_old-scope>
+                <IgbButton Variant="ButtonVariant.Flat" @onclick="@(e => Dropdown?.Toggle(Button))" @ref="Button" class="button" products_new-scope>
                     <span>Sort by</span>
                     <span class="material-icons">
                         keyboard_arrow_down
                     </span>
                     <IgbRipple></IgbRipple>
                 </IgbButton>
-                <IgbDropdown @ref="Dropdown" class="dropdown" products_old-scope>
+                <IgbDropdown @ref="Dropdown" class="dropdown" products_new-scope>
                     <IgbDropdownItem>
                         Date added
                     </IgbDropdownItem>
@@ -57,8 +57,8 @@
         <div class="row-layout products">
             @foreach (var item in inventoryAppProducts)
             {
-                <IgbCard Outlined="true" class="card" products_old-scope>
-                    <IgbCardMedia class="media-content" products_old-scope>
+                <IgbCard Outlined="true" class="card" products_new-scope>
+                    <IgbCardMedia class="media-content" products_new-scope>
                         <img src="@item.ImageURL" class="image" />
                     </IgbCardMedia>
                     <IgbCardHeader>
@@ -69,23 +69,23 @@
                             @item.Department
                         </h5>
                     </IgbCardHeader>
-                    <IgbCardContent class="body-content" products_old-scope>
+                    <IgbCardContent class="body-content" products_new-scope>
                         <p class="typography__body-2 text">
                             Here you can add some description of the product in more details
                         </p>
                     </IgbCardContent>
-                    <IgbCardActions class="actions-content" products_old-scope>
-                        <IgbButton Variant="ButtonVariant.Outlined" class="button_1" products_old-scope>
+                    <IgbCardActions class="actions-content" products_new-scope>
+                        <IgbButton Variant="ButtonVariant.Outlined" class="button_1" products_new-scope>
                             Edit
                             <IgbRipple></IgbRipple>
                         </IgbButton>
-                        <IgbIconButton Variant="IconButtonVariant.Flat" class="icon-button" products_old-scope>
+                        <IgbIconButton Variant="IconButtonVariant.Flat" class="icon-button" products_new-scope>
                             <span class="material-icons">
                                 remove_red_eye
                             </span>
                             <IgbRipple></IgbRipple>
                         </IgbIconButton>
-                        <IgbIconButton Variant="IconButtonVariant.Flat" class="icon-button" products_old-scope>
+                        <IgbIconButton Variant="IconButtonVariant.Flat" class="icon-button" products_new-scope>
                             <span class="material-icons">
                                 delete
                             </span>

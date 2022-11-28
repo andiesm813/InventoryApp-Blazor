@@ -42,19 +42,11 @@
 .group_3 {
     flex-wrap: wrap;
     justify-content: flex-start;
-    align-items: center;
-    align-content: flex-start;
-    position: relative;
-}
-.group_4 {
-    flex-wrap: wrap;
-    justify-content: flex-start;
     align-items: stretch;
     align-content: flex-start;
     gap: 16px;
     position: relative;
-    flex-grow: 1;
-    flex-basis: 0;
+    flex-shrink: 0;
 }
 .products {
     flex-wrap: wrap;
@@ -120,14 +112,8 @@
     flex-grow: 1;
     flex-basis: 0;
 }
-.dropdown {
-    min-width: min-content;
-}
 .button_1 {
     margin: 0 0 8px 8px;
     height: max-content;
     min-width: min-content;
-}
-.dropdown::part(base) {
-    height: max-content;
 }

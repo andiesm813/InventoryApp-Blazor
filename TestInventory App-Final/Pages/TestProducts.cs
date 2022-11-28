@@ -16,8 +16,6 @@ namespace TestInventory_App_Final
 				typeof(IgniteUI.Blazor.Controls.IgbButtonModule),
 				typeof(IgniteUI.Blazor.Controls.IgbRippleModule),
 				typeof(IgniteUI.Blazor.Controls.IgbInputModule),
-				typeof(IgniteUI.Blazor.Controls.IgbDropdownModule),
-				typeof(IgniteUI.Blazor.Controls.IgbDropdownItemModule),
 				typeof(IgniteUI.Blazor.Controls.IgbCardModule),
 				typeof(IgniteUI.Blazor.Controls.IgbIconButtonModule));
 			var mockHttpClient = new MockHttpClient().Create();

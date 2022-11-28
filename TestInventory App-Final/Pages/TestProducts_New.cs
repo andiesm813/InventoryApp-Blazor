@@ -5,7 +5,7 @@ using Inventory_App_Final.InventoryApp;
 
 namespace TestInventory_App_Final
 {
-	public class TestProductsOld
+	public class TestProductsNew
 	{
 		[Fact]
 		public void ViewIsCreated()
@@ -22,7 +22,7 @@ namespace TestInventory_App_Final
 				typeof(IgniteUI.Blazor.Controls.IgbIconButtonModule));
 			var mockHttpClient = new MockHttpClient().Create();
 			ctx.Services.AddSingleton(new InventoryAppService(mockHttpClient));
-			var componentUnderTest = ctx.RenderComponent<ProductsOld>();
+			var componentUnderTest = ctx.RenderComponent<ProductsNew>();
 			Assert.NotNull(componentUnderTest);
 		}
 	}

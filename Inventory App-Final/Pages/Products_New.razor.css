@@ -2,7 +2,7 @@
     display: flex;
     flex-direction: column;
 }
-.products_old-container {
+.products_new-container {
     justify-content: flex-start;
     align-items: stretch;
     align-content: flex-start;

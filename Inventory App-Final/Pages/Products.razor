@@ -24,8 +24,8 @@
                 </IgbButton>
             </div>
         </div>
-        <div class="row-layout group_3">
-            <div class="row-layout group_4">
+        <div class="row-layout group_1">
+            <div class="row-layout group_3">
                 <span class="select">Select not yet available in Blazor</span>
                 <span class="user-input">Combo not yet available in Blazor</span>
                 <IgbInput Label="Search" Outlined="false" class="user-input" products-scope>
@@ -36,21 +36,10 @@
                     </span>
                 </IgbInput>
             </div>
-            <IgbButton Variant="ButtonVariant.Flat" @onclick="@(e => Dropdown1?.Toggle(Button1))" @ref="Button1" class="button" products-scope>
-                <span>Sort By</span>
-                <span class="material-icons">
-                    add
-                </span>
+            <IgbButton class="button" products-scope>
+                Button
                 <IgbRipple></IgbRipple>
             </IgbButton>
-            <IgbDropdown @ref="Dropdown1" class="dropdown" products-scope>
-                <IgbDropdownItem>
-                    Alphabetically
-                </IgbDropdownItem>
-                <IgbDropdownItem>
-                    Recently Added
-                </IgbDropdownItem>
-            </IgbDropdown>
         </div>
         <div class="row-layout products">
             @foreach (var item in inventoryAppProducts)
@@ -97,8 +86,6 @@
 </div>
 
 @code {
-    private IgbButton? Button1;
-    private IgbDropdown? Dropdown1;
     private InventoryApp.ProductsType[] inventoryAppProducts = Array.Empty<InventoryApp.ProductsType>();
 
     protected override async Task OnInitializedAsync()
