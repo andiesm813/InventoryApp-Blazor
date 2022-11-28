@@ -9,11 +9,17 @@
             </h6>
             <div class="row-layout group_2">
                 <IgbButton class="button" products-scope>
-                    Button
+                    <span class="material-icons">
+                        add
+                    </span>
+                    <span>Add New Product</span>
                     <IgbRipple></IgbRipple>
                 </IgbButton>
                 <IgbButton Variant="ButtonVariant.Outlined" class="button" products-scope>
-                    Button
+                    <span class="material-icons">
+                        import_export
+                    </span>
+                    <span>Import Product</span>
                     <IgbRipple></IgbRipple>
                 </IgbButton>
             </div>
@@ -31,7 +37,7 @@
                 </IgbInput>
             </div>
             <IgbButton Variant="ButtonVariant.Flat" @onclick="@(e => Dropdown1?.Toggle(Button1))" @ref="Button1" class="button" products-scope>
-                <span>Button</span>
+                <span>Sort By</span>
                 <span class="material-icons">
                     add
                 </span>
@@ -39,7 +45,10 @@
             </IgbButton>
             <IgbDropdown @ref="Dropdown1" class="dropdown" products-scope>
                 <IgbDropdownItem>
-                    Option
+                    Alphabetically
+                </IgbDropdownItem>
+                <IgbDropdownItem>
+                    Recently Added
                 </IgbDropdownItem>
             </IgbDropdown>
         </div>
