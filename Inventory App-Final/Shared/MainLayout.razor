@@ -1,0 +1,59 @@
+@inherits LayoutComponentBase
+@inject NavigationManager NavigationManager
+
+<div class="row-layout master-view-container">
+    <div class="column-layout group">
+        <IgbList class="list" master-view-scope>
+            <IgbListItem @onclick="@(e => Navigate(""))">
+                <div slot="start">
+                    <IgbAvatar Src="assets/Avatar13.png" Shape="AvatarShape.Circle" class="avatar" master-view-scope></IgbAvatar>
+                </div>
+                <div slot="title">Jane Doe</div>
+                <div slot="subtitle">Sales Manager</div>
+            </IgbListItem>
+            <IgbListItem @onclick="@(e => Navigate(""))">
+                <div slot="start">
+                    <IgbAvatar Src="assets/Store_Icon_Small.svg" class="avatar" master-view-scope></IgbAvatar>
+                </div>
+                <div slot="title">Dashboard</div>
+            </IgbListItem>
+            <IgbListItem @onclick="@(e => Navigate("products"))">
+                <div slot="start">
+                    <IgbAvatar Src="assets/Inventory_Icon_Small.svg" class="avatar" master-view-scope></IgbAvatar>
+                </div>
+                <div slot="title">Products</div>
+            </IgbListItem>
+            <IgbListItem @onclick="@(e => Navigate("orders_old"))">
+                <div slot="start">
+                    <IgbAvatar Src="assets/Orders_Icon_Small.svg" class="avatar" master-view-scope></IgbAvatar>
+                </div>
+                <div slot="title">Orders</div>
+            </IgbListItem>
+            <IgbListItem @onclick="@(e => Navigate("customers"))">
+                <div slot="start">
+                    <IgbAvatar Src="assets/Customers_Icon_Small.svg" class="avatar" master-view-scope></IgbAvatar>
+                </div>
+                <div slot="title">Customers</div>
+            </IgbListItem>
+            <IgbListItem @onclick="@(e => Navigate("reports"))">
+                <div slot="start">
+                    <IgbAvatar Src="assets/Reports_Icon_Small.svg" class="avatar" master-view-scope></IgbAvatar>
+                </div>
+                <div slot="title">Reports</div>
+            </IgbListItem>
+        </IgbList>
+        <div class="column-layout group_1">
+            <img src="assets/invmgmt_logo.svg" class="image" />
+        </div>
+    </div>
+    <div class="view-container">
+        @Body
+    </div>
+</div>
+
+@code {
+    private void Navigate(string path)
+    {
+        NavigationManager.NavigateTo(path);
+    }
+}

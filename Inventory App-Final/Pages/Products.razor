@@ -1,0 +1,99 @@
+@page "/products"
+@inject InventoryApp.InventoryAppService inventoryAppService
+
+<div class="row-layout products-container">
+    <div class="column-layout group">
+        <div class="row-layout group_1">
+            <h6 class="h6">
+                Products
+            </h6>
+            <div class="row-layout group_2">
+                <IgbButton class="button" products-scope>
+                    Button
+                    <IgbRipple></IgbRipple>
+                </IgbButton>
+                <IgbButton Variant="ButtonVariant.Outlined" class="button" products-scope>
+                    Button
+                    <IgbRipple></IgbRipple>
+                </IgbButton>
+            </div>
+        </div>
+        <div class="row-layout group_3">
+            <div class="row-layout group_4">
+                <span class="select">Select not yet available in Blazor</span>
+                <span class="user-input">Combo not yet available in Blazor</span>
+                <IgbInput Label="Search" Outlined="false" class="user-input" products-scope>
+                    <span slot="prefix">
+                        <span class="material-icons icon">
+                            search
+                        </span>
+                    </span>
+                </IgbInput>
+            </div>
+            <IgbButton Variant="ButtonVariant.Flat" @onclick="@(e => Dropdown1?.Toggle(Button1))" @ref="Button1" class="button" products-scope>
+                <span>Button</span>
+                <span class="material-icons">
+                    add
+                </span>
+                <IgbRipple></IgbRipple>
+            </IgbButton>
+            <IgbDropdown @ref="Dropdown1" class="dropdown" products-scope>
+                <IgbDropdownItem>
+                    Option
+                </IgbDropdownItem>
+            </IgbDropdown>
+        </div>
+        <div class="row-layout products">
+            @foreach (var item in inventoryAppProducts)
+            {
+                <IgbCard Outlined="true" class="card" products-scope>
+                    <IgbCardMedia class="media-content" products-scope>
+                        <img src="@item.ImageURL" class="image" />
+                    </IgbCardMedia>
+                    <IgbCardHeader>
+                        <h3 slot="title">
+                            @item.Product
+                        </h3>
+                        <h5 slot="subtitle">
+                            @item.Department
+                        </h5>
+                    </IgbCardHeader>
+                    <IgbCardContent class="body-content" products-scope>
+                        <p class="typography__body-2 text">
+                            Here you can add some description of the product in more details
+                        </p>
+                    </IgbCardContent>
+                    <IgbCardActions class="actions-content" products-scope>
+                        <IgbButton Variant="ButtonVariant.Outlined" class="button_1" products-scope>
+                            Edit
+                            <IgbRipple></IgbRipple>
+                        </IgbButton>
+                        <IgbIconButton Variant="IconButtonVariant.Flat" class="icon-button" products-scope>
+                            <span class="material-icons">
+                                remove_red_eye
+                            </span>
+                            <IgbRipple></IgbRipple>
+                        </IgbIconButton>
+                        <IgbIconButton Variant="IconButtonVariant.Flat" class="icon-button" products-scope>
+                            <span class="material-icons">
+                                delete
+                            </span>
+                            <IgbRipple></IgbRipple>
+                        </IgbIconButton>
+                    </IgbCardActions>
+                </IgbCard>
+            }
+        </div>
+    </div>
+</div>
+
+@code {
+    private IgbButton? Button1;
+    private IgbDropdown? Dropdown1;
+    private InventoryApp.ProductsType[] inventoryAppProducts = Array.Empty<InventoryApp.ProductsType>();
+
+    protected override async Task OnInitializedAsync()
+    {
+        inventoryAppProducts = await this.inventoryAppService.GetProducts() ?? inventoryAppProducts;
+    }
+}

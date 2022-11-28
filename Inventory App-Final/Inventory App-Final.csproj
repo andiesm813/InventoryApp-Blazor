@@ -1,0 +1,26 @@
+<Project Sdk="Microsoft.NET.Sdk.BlazorWebAssembly">
+
+  <PropertyGroup>
+    <TargetFramework>net6.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="IgniteUI.Blazor" Version="22.2.21" />
+    <PackageReference Include="Microsoft.AspNetCore.Components.WebAssembly" Version="6.0.0" />
+    <PackageReference Include="Microsoft.AspNetCore.Components.WebAssembly.DevServer" Version="6.0.0" PrivateAssets="all" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Update="Shared/MainLayout.razor.css" CssScope="master-view-scope" />
+    <None Update="Pages/Home.razor.css" CssScope="home-scope" />
+    <None Update="Pages/Products_Old.razor.css" CssScope="products_old-scope" />
+    <None Update="Pages/Products.razor.css" CssScope="products-scope" />
+    <None Update="Pages/Orders_Old.razor.css" CssScope="orders_old-scope" />
+    <None Update="Pages/Orders.razor.css" CssScope="orders-scope" />
+    <None Update="Pages/Customers.razor.css" CssScope="customers-scope" />
+    <None Update="Pages/Reports.razor.css" CssScope="reports-scope" />
+  </ItemGroup>
+
+</Project>
