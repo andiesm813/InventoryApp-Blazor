@@ -24,9 +24,11 @@
     flex-basis: 0;
 }
 .group_1 {
+    flex-wrap: wrap;
     justify-content: space-between;
     align-items: center;
     align-content: flex-start;
+    gap: 24px;
     position: relative;
 }
 .group_2 {
@@ -35,25 +37,21 @@
     align-content: flex-start;
     gap: 16px;
     position: relative;
-    min-width: 50px;
-    min-height: 50px;
 }
 .group_3 {
+    flex-wrap: wrap;
     justify-content: flex-start;
     align-items: center;
     align-content: flex-start;
     position: relative;
-    min-width: 50px;
-    min-height: 50px;
 }
 .group_4 {
+    flex-wrap: wrap;
     justify-content: flex-start;
     align-items: stretch;
     align-content: flex-start;
     gap: 16px;
     position: relative;
-    min-width: 50px;
-    min-height: 50px;
     flex-grow: 1;
     flex-basis: 0;
 }
