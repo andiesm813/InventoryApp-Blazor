@@ -12,6 +12,7 @@
     flex-direction: column;
 }
 .group {
+    background-color: hsla(var(--ig-gray-100));
     justify-content: flex-start;
     align-items: stretch;
     align-content: flex-start;
@@ -46,7 +47,6 @@
     align-content: flex-start;
     gap: 16px;
     position: relative;
-    flex-shrink: 0;
 }
 .products {
     flex-wrap: wrap;
@@ -100,20 +100,21 @@
     min-width: min-content;
     flex-shrink: 0;
 }
-.select {
-    height: max-content;
-    min-width: 120px;
-    flex-shrink: 0;
-}
 .user-input {
     height: max-content;
-    min-width: 120px;
-    max-width: 240px;
+    min-width: 240px;
+    max-width: 290px;
     flex-grow: 1;
     flex-basis: 0;
+}
+.dropdown {
+    min-width: min-content;
 }
 .button_1 {
     margin: 0 0 8px 8px;
     height: max-content;
     min-width: min-content;
+}
+.dropdown::part(base) {
+    height: max-content;
 }

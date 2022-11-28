@@ -1,0 +1,42 @@
+@page "/child-view"
+
+<div class="row-layout child-view-container">
+    <div class="column-layout group">
+        <div class="row-layout group_1">
+            <div class="row-layout group_2">
+                <IgbButton class="button" child-view-scope>
+                    Button
+                    <IgbRipple></IgbRipple>
+                </IgbButton>
+                <IgbButton class="button" child-view-scope>
+                    Button
+                    <IgbRipple></IgbRipple>
+                </IgbButton>
+                <IgbButton class="button" child-view-scope>
+                    Button
+                    <IgbRipple></IgbRipple>
+                </IgbButton>
+            </div>
+            <IgbButton @onclick="@(e => Dropdown1?.Toggle(Button1))" @ref="Button1" class="button" child-view-scope>
+                <span class="material-icons">
+                    add
+                </span>
+                <span>Button</span>
+                <IgbRipple></IgbRipple>
+            </IgbButton>
+            <IgbDropdown @ref="Dropdown1" class="dropdown" child-view-scope>
+                <IgbDropdownItem>
+                    Option
+                </IgbDropdownItem>
+                <IgbDropdownItem>
+                    Option
+                </IgbDropdownItem>
+            </IgbDropdown>
+        </div>
+    </div>
+</div>
+
+@code {
+    private IgbButton? Button1;
+    private IgbDropdown? Dropdown1;
+}

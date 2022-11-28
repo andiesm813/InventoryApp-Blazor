@@ -1,11 +1,10 @@
 using Bunit;
 using Microsoft.Extensions.DependencyInjection;
 using Inventory_App_Final.Pages;
-using Inventory_App_Final.InventoryApp;
 
 namespace TestInventory_App_Final
 {
-	public class TestProductsNew
+	public class TestChildView
 	{
 		[Fact]
 		public void ViewIsCreated()
@@ -15,14 +14,9 @@ namespace TestInventory_App_Final
 			ctx.Services.AddIgniteUIBlazor(
 				typeof(IgniteUI.Blazor.Controls.IgbButtonModule),
 				typeof(IgniteUI.Blazor.Controls.IgbRippleModule),
-				typeof(IgniteUI.Blazor.Controls.IgbInputModule),
 				typeof(IgniteUI.Blazor.Controls.IgbDropdownModule),
-				typeof(IgniteUI.Blazor.Controls.IgbDropdownItemModule),
-				typeof(IgniteUI.Blazor.Controls.IgbCardModule),
-				typeof(IgniteUI.Blazor.Controls.IgbIconButtonModule));
-			var mockHttpClient = new MockHttpClient().Create();
-			ctx.Services.AddSingleton(new InventoryAppService(mockHttpClient));
-			var componentUnderTest = ctx.RenderComponent<ProductsNew>();
+				typeof(IgniteUI.Blazor.Controls.IgbDropdownItemModule));
+			var componentUnderTest = ctx.RenderComponent<ChildView>();
 			Assert.NotNull(componentUnderTest);
 		}
 	}
